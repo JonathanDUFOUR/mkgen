@@ -3,6 +3,8 @@ INSTALLATION
 ```
 git clone https://gitlab.com/JonathanDUFOUR/mkgen.git
 cd mkgen
+git submodule init
+git submodule update
 ```
 
 First, you have to define the Makefile template you want to use, and store it whenever you want on your computer.
