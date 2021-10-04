@@ -70,7 +70,4 @@ fclean:
 
 re:	fclean all
 
--include /home/jodufour/Templates/mk_files/coffee.mk
--include /home/jodufour/Templates/mk_files/norm.mk
-
 .PHONY:	all clean fclean re coffee norm
