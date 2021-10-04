@@ -3,6 +3,7 @@
 !*/
 !*.c
 !*.h
+!*.mk
 !LICENSE
 !Makefile
 !.gitignore
