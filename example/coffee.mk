@@ -6,15 +6,15 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/29 02:54:07 by jodufour          #+#    #+#              #
-#    Updated: 2021/09/29 02:54:40 by jodufour         ###   ########.fr        #
+#    Updated: 2021/11/07 03:14:14 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 coffee:
 	@echo         '                                              '
-	@echo -e '\e[5m                   "   "                      \e[0m'
-	@echo -e '\e[5m                  " " " "                     \e[0m'
-	@echo -e '\e[5m                 " " " "                      \e[0m'
+	@echo -e '\e[5m                )  )  )                      \e[0m'
+	@echo -e '\e[5m               (  (  (                       \e[0m'
+	@echo -e '\e[5m                )  )  )                      \e[0m'
 	@echo         '         _.-==="-"""""-"===-._                '
 	@echo         '        |=___   "~"~"~"   ___=|=,.            '
 	@echo         '        |    """======="""    |  \\           '
@@ -27,3 +27,5 @@ coffee:
 	@echo         '          \                 /                 '
 	@echo         '           `"--._______.--"`                  '
 	@echo         '                                              '
+
+.PHONY:	coffee
