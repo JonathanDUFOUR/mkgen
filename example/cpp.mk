@@ -1,23 +1,23 @@
 ######################################
 #              COMMANDS              #
 ######################################
-CC		=	clang -c -o
-LINK	=	clang -o
-MKDIR	=	mkdir -p
-RM		=	rm -rf
+CXX				=	clang++ -c
+LINK			=	clang++
+MKDIR			=	mkdir -p
+RM				=	rm -rf
 
 ######################################
 #             EXECUTABLE             #
 ######################################
-NAME	=	
+NAME			=	
 
 #######################################
 #             DIRECTORIES             #
 #######################################
-SRC_DIR	=	
-OBJ_DIR	=	
-INC_DIR	=	
-PRV_DIR	=	
+SRC_DIR			=	
+OBJ_DIR			=	
+INC_DIR			=	
+PRV_DIR			=	
 
 #######################################
 #              LIBRARIES              #
@@ -26,41 +26,42 @@ PRV_DIR	=
 ######################################
 #            SOURCE FILES            #
 ######################################
-SRC		=	
+SRC				=	
 
 ######################################
 #            OBJECT FILES            #
 ######################################
-OBJ		=	${SRC:.c=.o}
-OBJ		:=	${addprefix ${OBJ_DIR}, ${OBJ}}
+OBJ				=	${SRC:.cpp=.o}
+OBJ				:=	${addprefix ${OBJ_DIR}, ${OBJ}}
 
-DEP		=	${OBJ:.o=.d}
+DEP				=	${OBJ:.o=.d}
 
 #######################################
 #                FLAGS                #
 #######################################
-CFLAGS	=	-Wall -Wextra -Werror
-CFLAGS	+=	-MMD -MP
+CPPFLAGS		=	-Wall -Wextra -Werror
+CPPFLAGS		+=	-std=c++98
+CPPFLAGS		+=	-MMD -MP
 
-LDFLAGS	=	
+LDFLAGS			=	
 
 ifeq (${DEBUG}, 1)
-	CFLAGS	+=	-g
+	CPPFLAGS	+=	-g
 endif
 
 #######################################
 #                RULES                #
 #######################################
 ${NAME}:	${OBJ}
-	${LINK} $@ $^ ${LDFLAGS}
+	${LINK} $^ ${LDFLAGS} ${OUTPUT_OPTION}
 
 all:	${NAME}
 
 -include ${DEP}
 
-${OBJ_DIR}%.o:	${SRC_DIR}%.c
+${OBJ_DIR}%.o:	${SRC_DIR}%.cpp
 	@${MKDIR} ${@D}
-	${CC} $@ ${CFLAGS} $<
+	${CXX} ${CPPFLAGS} $< ${OUTPUT_OPTION}
 
 clean:
 	${RM} ${OBJ_DIR}
@@ -70,4 +71,4 @@ fclean:
 
 re:	fclean all
 
-.PHONY:	all clean fclean re coffee norm
+.PHONY:	all clean fclean re
