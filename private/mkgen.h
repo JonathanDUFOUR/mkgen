@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 01:57:56 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/11 16:07:19 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/11 16:18:32 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MKGEN_H
 
 # ifndef MK_PATH
-#  define MK_PATH "../example"
+#  define MK_PATH "/home/jodufour/Templates/mk_files"
 # endif
 
 # ifndef BUFF_SIZE

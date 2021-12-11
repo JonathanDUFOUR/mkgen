@@ -7,8 +7,7 @@ git submodule init
 git submodule update
 ```
 
-First, you have to define the Makefile template you want to use, and store it whenever you want on your computer.
-Once done, modify the TEMPLATE_FILENAME macro in the 'private/mkgen.h' header and put the full name of your own template.
+First, you have to define the MK_PATH macro with the path to the directory you store your mk templates in.
 You can now run
 ```
 make mkgen
