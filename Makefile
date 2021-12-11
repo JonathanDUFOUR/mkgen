@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/30 00:26:21 by jodufour          #+#    #+#              #
-#    Updated: 2021/09/30 03:37:52 by jodufour         ###   ########.fr        #
+#    Updated: 2021/12/11 16:05:09 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,11 @@ INC_DIR				=
 PRV_DIR				=	private/
 
 FT_MEM_DIR			=	libft_mem/
-FT_MEM_INC_DIR		=	includes/
+FT_MEM_INC_DIR		=	include/
 FT_MEM_INC_DIR		:=	${addprefix ${FT_MEM_DIR}, ${FT_MEM_INC_DIR}}
 
 FT_STRING_DIR		=	libft_string/
-FT_STRING_INC_DIR	=	includes/
+FT_STRING_INC_DIR	=	include/
 FT_STRING_INC_DIR	:=	${addprefix ${FT_STRING_DIR}, ${FT_STRING_INC_DIR}}
 
 #######################################
@@ -56,7 +56,8 @@ SRC					=	\
 						mkg_err_msg.c			\
 						mkg_file_content_get.c	\
 						mkg_file_create.c		\
-						mkg_ok_msg.c
+						mkg_ok_msg.c			\
+						mkg_usage_msg.c
 
 ######################################
 #            OBJECT FILES            #

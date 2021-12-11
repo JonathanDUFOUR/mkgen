@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 02:15:15 by jodufour          #+#    #+#             */
-/*   Updated: 2021/09/30 03:01:48 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/12/11 16:10:46 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 #include "mkgen.h"
 #include "enum/e_ret.h"
 
-int	mkg_file_content_get(int const fd, char **content)
+int	mkg_file_content_get(int const fd, char const **const content)
 {
-	char	buff[BUFF_SIZE + 1];
-	char	*tmp;
-	int		rd;
+	char		buff[BUFF_SIZE + 1];
+	char const	*tmp;
+	int			rd;
 
+	*content = ft_calloc(1, sizeof(char));
 	rd = read(fd, buff, BUFF_SIZE);
 	while (rd > 0)
 	{

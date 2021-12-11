@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   e_ret.h                                            :+:      :+:    :+:   */
+/*   mkg_usage_msg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/30 00:28:06 by jodufour          #+#    #+#             */
-/*   Updated: 2021/12/11 15:38:08 by jodufour         ###   ########.fr       */
+/*   Created: 2021/12/11 15:44:01 by jodufour          #+#    #+#             */
+/*   Updated: 2021/12/11 15:51:27 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef E_RET_H
-# define E_RET_H
+#include <stdio.h>
+#include "enum/e_ret.h"
 
-enum	e_ret
-{
-	SUCCESS,
-	OPEN_ERR,
-	READ_ERR,
-	USAGE_ERR,
-	EXIST_ERR,
-	CREAT_ERR,
-	WRITE_ERR,
-	CLOSE_ERR,
-	FT_STRJOIN_ERR,
-	WRITE_CLOSE_ERR
-};
-
+#ifndef USAGE
+# define USAGE	"\
+Usage:\n\
+\t./mkgen template_filename_without_extension\n\
+"
 #endif
+
+int	mkg_usage_msg(void)
+{
+	printf(USAGE);
+	return (SUCCESS);
+}
