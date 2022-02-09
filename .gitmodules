@@ -1,6 +1,3 @@
-[submodule "libft_mem"]
-	path = libft_mem
-	url = https://gitlab.com/JonathanDUFOUR/libft_mem.git
 [submodule "libft_string"]
 	path = libft_string
 	url = https://gitlab.com/JonathanDUFOUR/libft_string.git
