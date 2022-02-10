@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <fcntl.h>
+#include <string.h>
 #include <unistd.h>
-#include "ft_mem.h"
 #include "ft_string.h"
 #include "mkgen.h"
 #include "enum/e_ret.h"

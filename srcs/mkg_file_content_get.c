@@ -12,7 +12,6 @@
 
 #include <unistd.h>
 #include "ft_string.h"
-#include "ft_mem.h"
 #include "mkgen.h"
 #include "enum/e_ret.h"
 

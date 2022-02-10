@@ -12,3 +12,5 @@
 
 norm:
 	@norminette ${SRC_DIR} ${PRV_DIR} | grep 'Error' ; true
+
+PHONY: norm

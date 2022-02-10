@@ -31,10 +31,6 @@ OBJ_DIR				=	objs/
 INC_DIR				=	
 PRV_DIR				=	private/
 
-FT_MEM_DIR			=	libft_mem/
-FT_MEM_INC_DIR		=	include/
-FT_MEM_INC_DIR		:=	${addprefix ${FT_MEM_DIR}, ${FT_MEM_INC_DIR}}
-
 FT_STRING_DIR		=	libft_string/
 FT_STRING_INC_DIR	=	include/
 FT_STRING_INC_DIR	:=	${addprefix ${FT_STRING_DIR}, ${FT_STRING_INC_DIR}}
@@ -42,9 +38,6 @@ FT_STRING_INC_DIR	:=	${addprefix ${FT_STRING_DIR}, ${FT_STRING_INC_DIR}}
 #######################################
 #              LIBRARIES              #
 #######################################
-FT_MEM_A			=	libft_mem.a
-FT_MEM_A			:=	${addprefix ${FT_MEM_DIR}, ${FT_MEM_A}}
-
 FT_STRING_A			=	libft_string.a
 FT_STRING_A			:=	${addprefix ${FT_STRING_DIR}, ${FT_STRING_A}}
 
@@ -73,11 +66,9 @@ DEP					=	${OBJ:.o=.d}
 CFLAGS				=	-Wall -Wextra -Werror
 CFLAGS				+=	-MMD -MP
 CFLAGS				+=	-I${PRV_DIR}
-CFLAGS				+=	-I${FT_MEM_INC_DIR}
 CFLAGS				+=	-I${FT_STRING_INC_DIR}
 
-LDFLAGS				=	-L${FT_MEM_DIR} -lft_mem
-LDFLAGS				+=	-L${FT_STRING_DIR} -lft_string
+LDFLAGS				=	-L${FT_STRING_DIR} -lft_string
 
 ifeq (${DEBUG}, 1)
 	CFLAGS	+=	-g
@@ -86,34 +77,32 @@ endif
 #######################################
 #                RULES                #
 #######################################
-${NAME}:	${OBJ} ${FT_MEM_A} ${FT_STRING_A}
+${NAME}: ${OBJ} ${FT_STRING_A}
 	${LINK} $@ ${OBJ} ${LDFLAGS}
 
-all:	${NAME}
+all: ${NAME}
 
 -include ${DEP}
 
-${OBJ_DIR}%.o:	${SRC_DIR}%.c
+${OBJ_DIR}%.o: ${SRC_DIR}%.c
 	@${MKDIR} ${@D}
 	${CC} $@ ${CFLAGS} $<
-
-${FT_MEM_A}:
-	${MAKE} ${@F} -C ${@D}
 
 ${FT_STRING_A}:
 	${MAKE} ${@F} -C ${@D}
 
 clean:
-	${RM} ${OBJ_DIR}
+	${RM} ${OBJ_DIR} ${NAME}
 
 fclean:
 	${RM} ${OBJ_DIR} ${NAME}
-	${MAKE} $@ -C ${FT_MEM_DIR}
 	${MAKE} $@ -C ${FT_STRING_DIR}
 
-re:	fclean all
+re: clean all
+
+fre: fclean all
 
 -include /home/jodufour/Templates/mk_files/coffee.mk
 -include /home/jodufour/Templates/mk_files/norm.mk
 
-.PHONY:	all clean fclean re coffee norm
+.PHONY:	all clean fclean re fre

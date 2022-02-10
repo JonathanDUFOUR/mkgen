@@ -18,7 +18,7 @@ int	mkg_err_msg(int err)
 {
 	int	i;
 
-	dprintf(2, RED "Error:\n");
+	fprintf(stderr, RED "Error:\n");
 	i = 0;
 	while (g_err_msg[i].msg && err != g_err_msg[i].err)
 		++i;
@@ -27,8 +27,8 @@ int	mkg_err_msg(int err)
 		if (g_err_msg[i].detail)
 			perror(g_err_msg[i].msg);
 		else
-			dprintf(2, "%s\n", g_err_msg[i].msg);
+			fprintf(stderr, "%s\n", g_err_msg[i].msg);
 	}
-	dprintf(2, WHITE);
+	fprintf(stderr, WHITE);
 	return (err);
 }

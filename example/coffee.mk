@@ -28,4 +28,4 @@ coffee:
 	@echo         '           `"--._______.--"`                  '
 	@echo         '                                              '
 
-.PHONY:	coffee
+.PHONY: coffee

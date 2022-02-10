@@ -51,23 +51,25 @@ endif
 #######################################
 #                RULES                #
 #######################################
-${NAME}:	${OBJ}
+${NAME}: ${OBJ}
 	${LINK} $^ ${LDFLAGS} ${OUTPUT_OPTION}
 
-all:	${NAME}
+all: ${NAME}
 
 -include ${DEP}
 
-${OBJ_DIR}%.o:	${SRC_DIR}%.c
+${OBJ_DIR}%.o: ${SRC_DIR}%.c
 	@${MKDIR} ${@D}
 	${CC} ${CFLAGS} $< ${OUTPUT_OPTION}
 
 clean:
-	${RM} ${OBJ_DIR}
+	${RM} ${OBJ_DIR} ${NAME} vgcore.*
 
 fclean:
-	${RM} ${OBJ_DIR} ${NAME}
+	${RM} ${OBJ_DIR} ${NAME} vgcore.*
 
-re:	fclean all
+re: clean all
 
-.PHONY:	all clean fclean re
+fre: fclean all
+
+.PHONY: all clean fclean re fre
