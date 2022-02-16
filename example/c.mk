@@ -46,6 +46,7 @@ LDFLAGS	=
 
 ifeq (${DEBUG}, 1)
 	CFLAGS	+=	-g
+	CFLAGS	+=	-DDEBUG=1
 endif
 
 #######################################
