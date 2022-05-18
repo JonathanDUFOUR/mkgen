@@ -1,7 +1,7 @@
 ######################################
 #              COMMANDS              #
 ######################################
-CXX			=	clang++ -c
+CXX			=	clang++
 LINK		=	clang++
 MKDIR		=	mkdir -p
 RM			=	rm -rf
@@ -39,7 +39,8 @@ DEP			=	${OBJ:.o=.d}
 #######################################
 #                FLAGS                #
 #######################################
-CPPFLAGS	=	-Wall -Wextra -Werror
+CPPFLAGS	=	-c
+CPPFLAGS	+=	-Wall -Wextra -Werror
 CPPFLAGS	+=	-std=c++98
 CPPFLAGS	+=	-MMD -MP
 

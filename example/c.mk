@@ -1,7 +1,7 @@
 ######################################
 #              COMMANDS              #
 ######################################
-CC		=	clang -c
+CC		=	clang
 LINK	=	clang
 MKDIR	=	mkdir -p
 RM		=	rm -rf
@@ -39,7 +39,8 @@ DEP		=	${OBJ:.o=.d}
 #######################################
 #                FLAGS                #
 #######################################
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-c
+CFLAGS	+=	-Wall -Wextra -Werror
 CFLAGS	+=	-MMD -MP
 
 LDFLAGS	=	
