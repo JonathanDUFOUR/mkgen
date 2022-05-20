@@ -53,6 +53,8 @@ endif
 #######################################
 #                RULES                #
 #######################################
+.PHONY: all clean fclean re fre
+
 ${NAME}: ${OBJ}
 	${LINK} $^ ${LDFLAGS} ${OUTPUT_OPTION}
 
@@ -73,5 +75,3 @@ fclean:
 re: clean all
 
 fre: fclean all
-
-.PHONY: all clean fclean re fre
