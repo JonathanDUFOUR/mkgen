@@ -32,7 +32,7 @@ SRC		=
 #            OBJECT FILES            #
 ######################################
 OBJ		=	${SRC:.c=.o}
-OBJ		:=	${addprefix ${OBJ_DIR}, ${OBJ}}
+OBJ		:=	${addprefix ${OBJ_DIR}/, ${OBJ}}
 
 DEP		=	${OBJ:.o=.d}
 
@@ -62,7 +62,7 @@ all: ${NAME}
 
 -include ${DEP}
 
-${OBJ_DIR}%.o: ${SRC_DIR}%.c
+${OBJ_DIR}/%.o: ${SRC_DIR}/%.c
 	@${MKDIR} ${@D}
 	${CC} ${CFLAGS} $< ${OUTPUT_OPTION}
 
